@@ -1,0 +1,21 @@
+Como um usuário anônimo
+Eu quero testar a página inicial
+Para garantir que o sistema reconheça um usuário anônimo
+
+Cenário 1 - Certificando que mensagens da página inicial são de anônimo
+Dado que
+    Eu navego para "http://localhost:8000/"
+Então
+    Eu vejo que o div "nav" contém "Você não está autenticado"
+    E Eu vejo que o div "nav" contém "Não é registrado?"
+    E Eu vejo que o div "content" contém "Bem Vindo Usuário Desconhecido!"
+    
+
+Cenário 2 - Certificando que os links para login e registro aparecem na página
+Dado que
+    Eu navego para "http://localhost:8000/"
+Então
+    Eu vejo que o link "Logar" tem href "/login"
+    E Eu vejo que o link "login" tem href "/login"
+    E Eu vejo que o link "Registrar-se" tem href "/register"
+    E Eu vejo que o link "Home" tem href "/"

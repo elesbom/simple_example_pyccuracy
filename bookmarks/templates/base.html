@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Django Bookmarks | {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/site_media/style.css"
+              type="text/css" />
+    </head>
+    <body>
+        <div id="nav">
+            <a name="home" href="/">Home</a>
+            {% if user.is_authenticated %}
+                Bem-Vindo {{ user.username }}
+                <a name="fechar_conta" href="/fechar_conta/{{user.username}}">Fechar conta</a>
+                (<a name="logout" href="/logout">Sair</a>)
+            {% else %}
+                <p>Você não está autenticado <a name="Login" href="/login">Logar</a>
+                Não é registrado? <a name="Register" href="/register/">Registrar-se</a></p>
+            {% endif %}
+        </div>
+        <h1>{% block head %}{% endblock %}</h1>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+Como um usuário anônimo
+Eu quero testar o logar, deslogar, criar e deletar um usuário
+Para garantir que esses procedimentos tenham todos os comportamentos esperados
+
+Cenário 1 - Certificando que o registro de um novo usuário válido é feito com sucesso
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
+    E Eu preencho a caixa de texto "password1" com "senha"
+    E Eu preencho a caixa de texto "password2" com "senha"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "Obrigado por se registrar. Suas informações foram salvas com sucesso."
+
+
+Cenário 2 - Certificando que um usuário com dados invalidos não seja cadastrado e a menssagem de erro seja exibida
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario-teste"
+    E Eu preencho a caixa de texto "email" com "emailinvalido"
+    E Eu preencho a caixa de texto "password1" com "senha1"
+    E Eu preencho a caixa de texto "password2" com "senha2"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "O nome do usuário só pode conter caracteres alfanuméricos e underline."
+    E eu vejo que o div "content" contém "Informe um endereço de email válido."
+    E eu vejo que o div "content" contém "As senhas não conferem."
+
+Cenário 3 - Certificando que a menssagem de erro seja exibida quando um se tenta utilizar um nome de usuário já cadastro
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
+    E Eu preencho a caixa de texto "password1" com "senha"
+    E Eu preencho a caixa de texto "password2" com "senha"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "Este usuário está em uso, por favor tente outro."
+
+Cenário 4 - Certificando que um usuário não cadastrado não loque e mostre a menssagem de erro na tela
+Dado que
+    Eu navego para "http://localhost:8000/login"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_inexistente"
+    E Eu preencho a caixa de texto "password" com "senha_errada"
+    E eu clico no botão "Logar" e espero
+Então
+    Eu vejo que o div "content" contém "O usuário e senha não confere."
+
+Cenário 5 - Certificando que um usuário não cadastrado não loque e mostre a menssagem de erro na tela
+Dado que
+    Eu navego para "http://localhost:8000/login"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_inexistente"
+    E Eu preencho a caixa de texto "password" com "senha"
+    E eu clico no botão "Logar" e espero
+Então
+    Eu vejo que o div "content" contém "O usuário e senha não confere."
+
+Cenário 6 - Certificando que um usuário não cadastrado não loque e mostre a menssagem de erro na tela
+Dado que
+    Eu navego para "http://localhost:8000/login"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "password" com "senha_errada"
+    E eu clico no botão "Logar" e espero
+Então
+    Eu vejo que o div "content" contém "O usuário e senha não confere."
+
+
+Cenário 7 - Certificando que um usuário cadastrado consiga logar
+Dado que
+    Eu navego para "http://localhost:8000/login"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "password" com "senha"
+    E Eu clico no botão "Logar" e espero
+Então
+    Eu vejo que o div "nav" contém "Bem-Vindo usuario_teste"
+    E Eu vejo que o div "content" contém "Bem vindo usuario_teste"
+    E Eu vejo que o link "Home" tem href "/"
+    E Eu vejo que o link "Fechar conta" tem href "/fechar_conta/usuario_teste"
+    E Eu vejo que o link "Sair" tem href "/logout"
+
+Cenário 8 - Certificando que um usuário cadastrado consiga deslogar
+Dado que
+    Eu navego para "http://localhost:8000/user/usuario_teste"
+Quando
+    E Eu clico no botão "logout" e espero
+Então
+    Eu vejo que o div "nav" contém "Você não está autenticado"
+    E Eu vejo que o div "nav" contém "Não é registrado?"
+    E Eu vejo que o div "content" contém "Bem Vindo Usuário Desconhecido!"
+
+Cenário 9 - Certificando que o usuário foi excluído
+Dado que
+    Eu navego para "http://localhost:8000/login"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "password" com "senha"
+    E Eu clico no botão "Logar" e espero
+    E Eu clico no botão "fechar_conta" e espero
+    E Eu clico no botão "Login" e espero
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "password" com "senha_errada"
+    E eu clico no botão "Logar" e espero 
+Então
+    Eu vejo que o div "content" contém "O usuário e senha não confere."
+

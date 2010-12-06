@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Bem vindo ao Django bookmarks {% endblock %}
+{% block head %} Bem vindo ao Django bookmarks {% endblock %}
+{% block content %}
+    {% if user.username %}
+        <p>
+            Bem vindo {{ user.username }}
+            Aqui você pode guardar e compartilhar seus bookmarks
+        </p>
+    {% else %}
+        <p id="teste">
+            Bem Vindo Usuário Desconhecido!
+            Você precisa efetuar o <a href="/login/">login</a>
+            antes, para você poder guardar e compartinhar seus bookmarks
+        </p>
+    {% endif %}
+{% endblock %}

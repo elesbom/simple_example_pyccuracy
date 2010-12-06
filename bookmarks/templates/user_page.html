@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ username }} {% endblock %}
+{% block head %} bookmark para {{ username }} {% endblock %}
+{% block content %}
+    <h1>Bem Vindo {{ username }}</h1>
+    {% if bookmarks %}
+        <ul>
+            {% for bookmark in bookmarks %}
+                <li><a href="{{ bookmark.link.url }}">
+                {{ bookmark.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum Bookmark encontrado</p>
+    {% endif %}
+{% endblock %}
