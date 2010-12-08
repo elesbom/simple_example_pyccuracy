@@ -1,0 +1,35 @@
+Como um usuário anônimo
+Eu quero testar a adição e a exclusão de um usuário
+Para garantir que o usuário foi realmente adicionado e realmente excluído
+
+Cenário 1 - Certificando que o registro de um novo usuário válido é feito com sucesso
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
+    E Eu preencho a caixa de texto "password1" com "senha"
+    E Eu preencho a caixa de texto "password2" com "senha"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "Obrigado por se registrar. Suas informações foram salvas com sucesso."
+
+Cenário 2 - Certificando que a página do usuário existe
+Dado que
+    Eu navego para "http://localhost:8000/user/usuario_teste"
+Então
+    Eu vejo que o div "content" contém "Bem Vindo usuario_teste"
+
+Cenário 3 - Certificando que a exclusão do usuário foi feita com sucesso
+Dado que
+    Eu navego para "http://localhost:8000/user/usuario_teste"
+Quando
+    E eu clico no botão "fechar_conta" e espero
+Então
+    Eu vejo que o div "content" contém "Bem Vindo Usuário Desconhecido!"
+
+Cenário 4 - Certificando que a página do usuário não existe, pois este foi excluído
+Dado que
+    Eu navego para "http://localhost:8000/user/usuario_teste"
+Então
+    Eu vejo que o div "info" contém "Usuário não encontrado"

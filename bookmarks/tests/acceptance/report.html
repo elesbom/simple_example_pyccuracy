@@ -242,18 +242,18 @@
 <body><table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tr><td class="header">
         Pyccuracy - Relatório de Testes -
-        <span class="date">06/12/2010 19:05:39</span>
+        <span class="date">08/12/2010 12:06:43</span>
 </td></tr>
 <tr><td class="report" style="padding-top: 6px; padding-bottom: 6px; padding-left: 12px;                 padding-right: 12px;">
 <table border="0" cellspacing="0" cellpadding="0" style="width: 33%">
-<tr><td style="padding: 3px 3px 3px 3px"><span class="runSucceeded">Testes com sucesso!</span></td></tr>
+<tr><td style="padding: 3px 3px 3px 3px"><span class="runFailed">Testes falharam!</span></td></tr>
 <tr><td class="summary" style="padding: 3px 3px 3px 3px">
 <b>Sumário:</b><br>
           Número de histórias: 1<br>
-          Número de cenários: 2<br>
-          Cenários com sucesso: <span class="successfulTests">2 (100.00%)
+          Número de cenários: 3<br>
+          Cenários com sucesso: <span class="successfulTests">2 (66.67%)
           </span><br>
-          Cenários com erro: <span class="failedTests">0 (0.00%)
+          Cenários com erro: <span class="failedTests">1 (33.33%)
           </span><br>
 </td></tr>
 </table>
@@ -262,12 +262,12 @@
           Histórias [<a href="javascript:" onclick="toggleAll();">Colapsar/Expandir Todas</a>]
         </td></tr>
 <tr><tr><td class="storiesBody">
-<div style="margin-top:6px;" class="story">
+<div style="margin-top:6px;" class="failedStory">
 <b>
         História 1: [<a href="javascript:" onclick="toggle('div_1');">Colapsar/Expandir
         </a>]
       </b><br>/home/elesbom/django/django_bookmarks/bookmarks/tests/acceptance/test_main_page_pt-br.acc<br>Como um usuário anônimo<br>Eu quero testar a página inicial<br>Para garantir que o sistema reconheça um usuário anônimo</div>
-<div style="display:none;" class="scenarios" id="div_1">
+<div style="display:block;" class="failedScenarios" id="div_1">
 <div style="padding-top:6px; width:100%;">
 <b class="scenarioTitle">
         Cenário 1</b>: Certificando que mensagens da página inicial são de anônimo<br>
@@ -285,7 +285,7 @@
 <tr class="even">
 <td class="action"><b>Eu navego para "http://localhost:8000/"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="odd">
@@ -303,19 +303,19 @@
 <tr class="odd">
 <td class="action"><b>Eu vejo que o div "nav" contém "Você não está autenticado"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="even">
 <td class="action"><b>E Eu vejo que o div "nav" contém "Não é registrado?"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="odd">
 <td class="action"><b>E Eu vejo que o div "content" contém "Bem Vindo Usuário Desconhecido!"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="totalTime">
@@ -325,7 +325,7 @@
             segundos
           </td>
 <td class="totalTimeFinishTime">
-            [Mon Dec  6 19:05:39 2010]
+            [Wed Dec  8 12:06:43 2010]
           </td>
 </tr>
 </table>
@@ -347,7 +347,7 @@
 <tr class="even">
 <td class="action"><b>Eu navego para "http://localhost:8000/"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="odd">
@@ -365,25 +365,25 @@
 <tr class="odd">
 <td class="action"><b>Eu vejo que o link "Logar" tem href "/login"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="even">
 <td class="action"><b>E Eu vejo que o link "login" tem href "/login"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="odd">
 <td class="action"><b>E Eu vejo que o link "Registrar-se" tem href "/register"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="even">
 <td class="action"><b>E Eu vejo que o link "Home" tem href "/"</b></td>
 <td class="actionTime">
-          [Mon Dec  6 19:05:39 2010]
+          [Wed Dec  8 12:06:43 2010]
         </td>
 </tr>
 <tr class="totalTime">
@@ -393,7 +393,98 @@
             segundos
           </td>
 <td class="totalTimeFinishTime">
-            [Mon Dec  6 19:05:39 2010]
+            [Wed Dec  8 12:06:43 2010]
+          </td>
+</tr>
+</table>
+</div>
+<div style="padding-top:6px; width:100%;">
+<b class="failedScenarioTitle">
+        Cenário 3</b>: Certificando que o registro de um novo usuário válido é feito com sucesso<br>
+      Narrativa:<br><table border="0" cellspacing="0" cellpadding="0" width="98%">
+<colgroup>
+<col>
+<col style="width: 200px;">
+</colgroup>
+<tr class="odd">
+<td class="condition"><b>Dado que</b></td>
+<td>
+           
+        </td>
+</tr>
+<tr class="even">
+<td class="action"><b>Eu navego para "http://localhost:8000/register"</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="odd">
+<td class="condition"><b>Quando</b></td>
+<td>
+           
+        </td>
+</tr>
+<tr class="even">
+<td class="action"><b>Eu preencho a caixa de texto "username" com "usuario_teste"</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="odd">
+<td class="action"><b>E Eu preencho a caixa de texto "email" com "emailteste@teste.com"</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="even">
+<td class="action"><b>E Eu preencho a caixa de texto "password1" com "senha"</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="odd">
+<td class="action"><b>E Eu preencho a caixa de texto "password2" com "senha"</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="even">
+<td class="action"><b>E eu clico no botão "Registrar" e espero</b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="odd">
+<td class="condition"><b>Então</b></td>
+<td>
+           
+        </td>
+</tr>
+<tr class="even">
+<td class="action"><b><font color="red">Eu vejo que o div "content" contém "Obrigado por se registrar. Suas informações foram salvas com sucesso." - O div com nome ou id content deveria conter "Obrigado por se registrar. Suas informações foram salvas com sucesso.", mas o seu texto atual é "
+            
+    &lt;form method="post" action="."&gt; &lt;div style="display: none;"&gt;&lt;input name="csrfmiddlewaretoken" value="0d5dcd037db3ba3631272ac0aa668f3c" type="hidden"&gt;&lt;/div&gt;
+        &lt;ul class="errorlist"&gt;&lt;li&gt;Este usuário está em uso, por favor tente outro.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;label for="id_username"&gt;Nome do usuário:&lt;/label&gt; &lt;input id="id_username" name="username" value="usuario_teste" maxlength="30" type="text"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label for="id_email"&gt;E-mail:&lt;/label&gt; &lt;input name="email" value="emailteste@teste.com" id="id_email" type="text"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label for="id_password1"&gt;Senha:&lt;/label&gt; &lt;input name="password1" value="senha" id="id_password1" type="password"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label for="id_password2"&gt;Repetir senha:&lt;/label&gt; &lt;input name="password2" value="senha" id="id_password2" type="password"&gt;&lt;/p&gt;
+        &lt;input name="Registrar" value="Salvar" type="submit"&gt;
+    &lt;/form&gt;
+
+        ".</font></b></td>
+<td class="actionTime">
+          [Wed Dec  8 12:06:43 2010]
+        </td>
+</tr>
+<tr class="totalTime">
+<td class="condition">
+<b>Tempo total do cenário:</b> 
+            0.00 
+            segundos
+          </td>
+<td class="totalTimeFinishTime">
+            [FAILED]
           </td>
 </tr>
 </table>

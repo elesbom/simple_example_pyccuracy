@@ -6,3 +6,5 @@ echo =================================================
     pyccuracy_console -p $i --language=pt-br
     echo Done...
 done
+
+

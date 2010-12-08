@@ -1,0 +1,27 @@
+Como um usuário anônimo
+Eu quero testar a adição de um usuário duas vezes
+Para garantir que o na segunda vez a menssagem de que o usuário está em uso apareça
+
+Cenário 1 - Certificando que o registro de um novo usuário válido é feito com sucesso
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
+    E Eu preencho a caixa de texto "password1" com "senha"
+    E Eu preencho a caixa de texto "password2" com "senha"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "Obrigado por se registrar. Suas informações foram salvas com sucesso."
+
+Cenário 2 - Certificando que a menssagem de erro seja exibida quando um se tenta utilizar um nome de usuário já cadastro
+Dado que
+    Eu navego para "http://localhost:8000/register"
+Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
+    E Eu preencho a caixa de texto "password1" com "senha"
+    E Eu preencho a caixa de texto "password2" com "senha"
+    E eu clico no botão "Registrar" e espero
+Então
+    Eu vejo que o div "content" contém "Este usuário está em uso, por favor tente outro."
