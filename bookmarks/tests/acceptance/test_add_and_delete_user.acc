@@ -22,8 +22,11 @@ Então
 
 Cenário 3 - Certificando que a exclusão do usuário foi feita com sucesso
 Dado que
-    Eu navego para "http://localhost:8000/user/usuario_teste"
+    Eu navego para "http://localhost:8000/login"
 Quando
+    Eu preencho a caixa de texto "username" com "usuario_teste"
+    E Eu preencho a caixa de texto "password" com "senha"
+    E eu clico no botão "Logar" e espero
     E eu clico no botão "fechar_conta" e espero
 Então
     Eu vejo que o div "content" contém "Bem Vindo Usuário Desconhecido!"

@@ -6,7 +6,7 @@ Cenário 1 - Certificando que o registro de um novo usuário válido é feito co
 Dado que
     Eu navego para "http://localhost:8000/register"
 Quando
-    Eu preencho a caixa de texto "username" com "usuario_teste"
+    Eu preencho a caixa de texto "username" com "mesmo_usuario"
     E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
     E Eu preencho a caixa de texto "password1" com "senha"
     E Eu preencho a caixa de texto "password2" com "senha"
@@ -18,7 +18,7 @@ Cenário 2 - Certificando que a menssagem de erro seja exibida quando um se tent
 Dado que
     Eu navego para "http://localhost:8000/register"
 Quando
-    Eu preencho a caixa de texto "username" com "usuario_teste"
+    Eu preencho a caixa de texto "username" com "mesmo_usuario"
     E Eu preencho a caixa de texto "email" com "emailteste@teste.com"
     E Eu preencho a caixa de texto "password1" com "senha"
     E Eu preencho a caixa de texto "password2" com "senha"
