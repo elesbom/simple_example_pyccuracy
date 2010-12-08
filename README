@@ -1,0 +1,11 @@
+Não recomento iniciar o servidor normalmente para executar os testes, pois os eles irão 
+usar seu bando de dados de desenvolvimento.Para que isso não aconteça execute o comando:
+
+elesbom@elesbom-laptop:~/django/django_bookmarks$ python manage.py testserver
+
+Agora rode os testes:
+
+elesbom@elesbom-laptop:~/django/django_bookmarks/bookmarks$ ./run_all_tests.sh 
+
+OBS: Lembrando que você deve iniciar o selenium por sua conta. Caso não saiba como fazer 
+acesse este link: https://github.com/heynemann/pyccuracy/wiki/Installation-guide
