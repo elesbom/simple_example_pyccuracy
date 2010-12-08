@@ -9,6 +9,7 @@ from django.template import RequestContext
 from bookmarks.forms import *
 
 def register_page(request):
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         variables = RequestContext(request, 
@@ -21,8 +22,10 @@ def register_page(request):
                 email = form.cleaned_data['email']
             )
             
-            return render_to_response('registration/register_success.html', variables)
+            return render_to_response('registration/register_success.html' \
+                , variables)
         else:
+        
             return render_to_response(
                 'registration/register.html', variables 
         )
@@ -31,6 +34,7 @@ def register_page(request):
         variables = RequestContext(request, 
                         {'form': form}
         )
+        
         return render_to_response(
             'registration/register.html',
              variables
@@ -38,6 +42,7 @@ def register_page(request):
         
 
 def main_page(request):
+
     return render_to_response(
         'main_page.html',
         RequestContext(request),
@@ -56,15 +61,19 @@ def user_page(request, username):
         'username': username,
         'bookmarks': bookmarks,
     })
+    
     return render_to_response('user_page.html', variables)
     
 def logout_page(request):
+
     logout(request)
+    
     return HttpResponseRedirect('/')
 
 def fechar_conta(request, username):
-    
+
     user = User.objects.get(username=username)
     user.delete()
     logout(request)
+    
     return HttpResponseRedirect('/')

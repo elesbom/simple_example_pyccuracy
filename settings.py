@@ -9,10 +9,14 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DATABASE_NAME = 'bookmarksdb'
+TEST_DATABASE_NAME = 'test_bookmarksdb'
+
 DATABASES = {
     'default': {
         'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'bookmarksdb',                      # Or path to database file if using sqlite3.
+        'TEST_NAME': 'test_bookmarksdb',
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '123',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -77,6 +81,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'django_bookmarks.urls'
 import os.path
+
+MANAGE_DIR = os.path.dirname(__file__)
+
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

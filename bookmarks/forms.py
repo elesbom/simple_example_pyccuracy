@@ -1,9 +1,11 @@
 #coding:utf-8
+
 from django import forms
-import re
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.forms.util import ErrorList
+
+import re
 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label= "Nome do usuário", max_length=30)
@@ -28,9 +30,11 @@ class RegistrationForm(forms.Form):
     def clean_username(self):
         username = self.cleaned_data['username']
         if not re.search(r'^\w+$', username):
-            raise forms.ValidationError('O nome do usuário só pode conter caracteres alfanuméricos e underline.')
+            raise forms.ValidationError('O nome do usuário só pode conter \
+                caracteres alfanuméricos e underline.')
         try:
             User.objects.get(username=username)
         except ObjectDoesNotExist:
             return username
-        raise forms.ValidationError('Este usuário está em uso, por favor tente outro.')
+        raise forms.ValidationError('Este usuário está em uso, por favor \
+            tente outro.')
